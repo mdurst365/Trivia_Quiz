@@ -1,10 +1,18 @@
+.App, p, h1, h2, h3, h4, h5 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
 .HeaderInfo {
     width: 100%;
     background-color: #4B7890;
     padding-top: 1em;
     padding-bottom: 1em;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 3em;
     font-weight: 600;
     color:white;
@@ -12,32 +20,49 @@
 
 .WelcomeBox {
     margin:auto;
-    padding: 2em;
     width: 50%;
     border: thin solid #4B7890;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px){
     .WelcomeBox {
         margin:auto;
-        padding: 2em;
         width: 70%;
         border: thin solid #4B7890;
     }
 }
 
+.smallHeader {
+    background-color: #9CCA68;
+    color:white;
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: 600;
+}
 
 .FooterInfo {
+    margin-top: 75px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     padding-top:.5em;
     background-color: #4B7890;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-size: 1em;
     line-height: 1.6;
     font-weight: 600;
     color:white;
+}
+
+.space {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.questionImg {
+    width:50%;
+    margin-top:10px;
+    margin-bottom:20px;
 }

@@ -1,13 +1,13 @@
 import "./css_reset.css"
 import "./styles.css";
-import React from "react";
 
-function WelcomeBox () {
+
+function WelcomeBox() {
     return (
         <div>
-            <br/><br/>
+            <br /><br />
             <div className="WelcomeBox">
-                
+            <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
             </div>
         </div>
     );
