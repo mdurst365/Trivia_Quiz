@@ -4,7 +4,7 @@ import React from "react";
 
 function HeaderInfo () {
     return (
-        <h1 className="HeaderInfo">Quiz Maker / Quiz Taker</h1>
+        <h1 className="HeaderInfo">Trivia Quiz</h1>
     );
     
 }
