@@ -1,17 +1,14 @@
-import React from "react"
+import "./css_reset.css"
+import "./styles.css";
+import React from "react";
 
-
-function Footer() {
+function FooterInfo() {
     return (
-        <div className="Footer">
-            <div className="footer-copyright text-center py-3">
-
-                &copy; {new Date().getFullYear()} Copyright: <a href="#"> TRIVIA QUIZ </a>
-
+        <div className="FooterInfo">
+            TRIVIA QUIZ &bull; Created for the Ohio State Coding Bootcamp<br/>
+            MIT License &bull; Rights Reserved 
             </div>
-
-        </div>
     )
 }
 
-export default Footer
+export default FooterInfo;
