@@ -4,8 +4,6 @@ const apiRoutes = require("./api");
 
 // API Routes will go here as they are needed
 
-
-
 // add before the catch all route
 app.use( "/api", require("./routes/authentication") );
 

@@ -9,6 +9,3 @@ const PORT = process.env.PORT || 3001;
 app.use(passport.initialize());
 // Passport config
 passport.use( require("./config/jwtPassportStrategy") );
-
-// add before the catch all route
-app.use( "/api", require("./routes/authentication") );
