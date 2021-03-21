@@ -3,6 +3,7 @@ import FooterInfo from './components/FooterInfo';
 import HeaderInfo from './components/HeaderInfo';
 import Registration from './components/RegistrationForm';
 import MakeTake from './components/MakeTake'
+import MakeQuiz from './components/MakeQuiz'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     </div>
     <Route path="/register" component={Registration}/>
     <Route path="/maketake" component={MakeTake}/>
+    <Route path="/makequiz" component={MakeQuiz}/>
     </Router>
   );
 }

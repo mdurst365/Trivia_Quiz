@@ -13,7 +13,7 @@
     padding-top: 1em;
     padding-bottom: 1em;
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 600;
     color:white;
 }
@@ -42,7 +42,6 @@
 }
 
 .FooterInfo {
-    margin-top: 75px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -65,4 +64,14 @@
     width:50%;
     margin-top:10px;
     margin-bottom:20px;
+}
+
+input[type=text] {
+    width: 65%;
+    height: 50px;
+}
+
+.smallright {
+    margin-left: 75%;
+    font-weight: 600;
 }
