@@ -1,7 +1,6 @@
 import "./css_reset.css"
 import "./styles.css";
 import Button from '@material-ui/core/Button';
-import { Dropdown } from 'semantic-ui-react';
 
 function MakeQuiz() {
     return (
@@ -12,7 +11,7 @@ function MakeQuiz() {
                     <h3 className="formSmall">
                     <br/>
                     Category: <input type="text" placeholder="Category"></input>
-                    <br/><br/>
+                    <div className="space"></div>
                     Question: <input type="text" placeholder="Input Question"></input>
                     <div className="space">
                     Answer A: <input type="text" placeholder="Answer A"></input>
