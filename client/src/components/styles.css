@@ -30,6 +30,13 @@
     text-align: center;
 }
 
+.RegisterBox {
+    margin:auto;
+    width: 50%;
+    border: thin solid #4B7890;
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px){
     .WelcomeBox {
         margin:auto;
