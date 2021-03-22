@@ -8,6 +8,7 @@ import MakeQuizFinish from './components/MakeQuizFinish';
 import SelectQuiz from './components/SelectQuiz';
 import RandomQuiz from './components/RandomQuiz';
 import EndQuiz from './components/EndQuiz';
+import ScoreScreen from './components/ScoreScreen';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from './components/WelcomeBox';
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/selectquiz" component={SelectQuiz}/>
       <Route path="/randomquiz" component={RandomQuiz}/>
       <Route path="/endquiz" component={EndQuiz}/>
+      <Route path="/scorescreen" component={ScoreScreen}/>
       </Switch> 
 
     </Router>

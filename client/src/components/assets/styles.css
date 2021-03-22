@@ -53,6 +53,14 @@
     font-weight: 600;
 }
 
+.smallHeaderBlue {
+    background-color: skyblue;
+    color:white;
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: 600;
+}
+
 .FooterInfo {
     position: fixed;
     left: 0;
@@ -72,7 +80,7 @@
     margin-bottom:20px;
 }
 
-.questionImg {
+.imgRoundBorder {
     width:50%;
     margin-top:10px;
     margin-bottom:20px;
@@ -101,3 +109,17 @@ h6 {
     color:white;
     padding: 2%;
 }
+
+.flex-container {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  
+  .flex-container > div {
+    background-color: #9CCA68;
+    color:white;
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    font-size: 1.25em;
+  }
