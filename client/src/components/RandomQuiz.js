@@ -2,11 +2,12 @@ import "./assets/css_reset.css"
 import "./assets/styles.css";
 import React from "react";
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 function RandomQuiz () {
     return (
         <div className="WelcomeBox space">
-            <h1 class="smallHeader"><br />RANDOM QUIZ<br />&nbsp;</h1>
+            <h1 className="smallHeader"><br />RANDOM QUIZ<br />&nbsp;</h1>
             <h6 className="space smallright">Question: 1/5</h6>
             <h2 className="space">Question: Update with dynamic info </h2>
             <p className="space answerBtn">Answer A:</p>
@@ -20,7 +21,9 @@ function RandomQuiz () {
 
             <p className="space">
                 <Button type="submit" variant="outlined" color="primary">
+                    <Link to="/endquiz">
                     Next
+                    </Link>
                     </Button>
                     </p>
          </div>
