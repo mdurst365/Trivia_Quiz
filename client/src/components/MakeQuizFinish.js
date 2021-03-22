@@ -1,5 +1,5 @@
-import "./css_reset.css"
-import "./styles.css";
+import "./assets/css_reset.css"
+import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +33,9 @@ function MakeQuizFinish() {
                 <Button className="bump" type="submit" variant="outlined">Back</Button>
                 </Link>
                 &nbsp; &nbsp;
+                <Link to="/selectquiz">
                 <Button type="submit" variant="outlined">Finish</Button>
+                </Link>
                 </div>
                 </div>
     );

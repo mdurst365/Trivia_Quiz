@@ -1,5 +1,5 @@
-import "./css_reset.css"
-import "./styles.css";
+import "./assets/css_reset.css"
+import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import questions from "./assets/questions.jpg"
 import { Link } from 'react-router-dom';

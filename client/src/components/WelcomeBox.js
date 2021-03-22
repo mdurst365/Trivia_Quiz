@@ -1,5 +1,5 @@
-import "./css_reset.css";
-import "./styles.css";
+import "./assets/css_reset.css";
+import "./assets/styles.css";
 import { Link } from 'react-router-dom';
 
 
