@@ -6,7 +6,7 @@ function MakeQuiz() {
     return (
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />MAKE A QUIZ<br />&nbsp;</h1>
-            <h5 className="space smallright">Question: 1/5</h5>
+            <h6 className="space smallright">Question: 1/5</h6>
                 <form>
                     <h3 className="formSmall">
                     <br/>

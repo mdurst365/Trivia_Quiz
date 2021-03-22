@@ -1,6 +1,7 @@
 import "./css_reset.css"
 import "./styles.css";
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 function Registration() {
     return (
@@ -13,10 +14,20 @@ function Registration() {
                     <br/><br/>
                     Password: <input type="password" placeholder="Password"></input>
                 </form>
-                <p className="space"><Button type="submit" variant="outlined">Sign In</Button></p>
+                <p className="space">
+                    <Button type="submit" variant="outlined">
+                    <Link to="/MakeTake">
+                    Sign In
+                    </Link>
+                    </Button>
+                    </p>
                 <p className="space bold">LOGIN AS GUEST
                 <br/><br/>
-                <Button type="submit" variant="outlined">Login</Button></p>
+                <Button type="submit" variant="outlined">
+                <Link to="/MakeTake">
+                    Login
+                    </Link>
+                    </Button></p>
                 </div>
     );
 }

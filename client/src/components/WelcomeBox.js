@@ -1,5 +1,6 @@
-import "./css_reset.css"
+import "./css_reset.css";
 import "./styles.css";
+import { Link } from 'react-router-dom';
 
 
 function WelcomeBox() {
@@ -7,7 +8,13 @@ function WelcomeBox() {
         <div>
             <br /><br />
             <div className="WelcomeBox">
-            <h1 class="smallHeader"><br />Start &#10142;<br />&nbsp;</h1>
+            
+            <h1 class="smallHeader">
+            <Link className="link" to="/register">
+                <br />Start &#10142;
+                <br />&nbsp;
+                </Link>
+                </h1>
             </div>
         </div>
     );
