@@ -1,7 +1,11 @@
-
 const express = require("express");
-const path = require("path");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+
+// Port
 const PORT = process.env.PORT || 3001;
+
+// Setup Express server
 const app = express();
 
 app.use([
@@ -9,16 +13,20 @@ app.use([
     express.json()
 ]);
 
+// Serve static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
 // Link API Routes here
-//updated this path
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+app.use(routes);
+
+// Mongo DB connection
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trivia_db", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 app.listen(PORT, () => {
-  console.log("🚀  Server server now on port", PORT, "👻 React App on Port 3000");
+  console.log("🚀  Server now on port", PORT, "👻 React App on Port 3000");
 });
