@@ -6,12 +6,14 @@ import MakeTake from './components/MakeTake';
 import MakeQuiz from './components/MakeQuiz';
 import SelectQuiz from './components/SelectQuiz';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import WelcomeBox from './components/WelcomeBox';
 
 function App() {
   return (
     <Router basename={ process.env.PUBLIC_URL }>
     <div className="App">
       <HeaderInfo />
+      <WelcomeBox />
       <FooterInfo />
     </div>
     <Route path="/register" component={Registration}/>
