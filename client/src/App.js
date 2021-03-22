@@ -6,6 +6,7 @@ import MakeTake from './components/MakeTake';
 import MakeQuiz from './components/MakeQuiz';
 import MakeQuizFinish from './components/MakeQuizFinish';
 import SelectQuiz from './components/SelectQuiz';
+import RandomQuiz from './components/RandomQuiz';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from './components/WelcomeBox';
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/makequiz" component={MakeQuiz}/>
       <Route path="/makequizfinish" component={MakeQuizFinish}/>
       <Route path="/selectquiz" component={SelectQuiz}/>
+      <Route path="/randomquiz" component={RandomQuiz}/>
       </Switch> 
 
     </Router>
