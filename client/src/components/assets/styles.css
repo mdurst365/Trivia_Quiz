@@ -93,3 +93,11 @@ input[type=text] {
 h6 {
     font-size: .75em;
 }
+
+.answerBtn {
+    background-color: skyblue;
+    margin:auto;
+    width: 60%;
+    color:white;
+    padding: 2%;
+}
