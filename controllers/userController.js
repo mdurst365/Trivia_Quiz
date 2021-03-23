@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// user table controller methods
+// user table methods
 module.exports = {
     getAll: (req, res) => {
         db.User
