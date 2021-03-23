@@ -20,7 +20,6 @@ function App() {
         <FooterInfo />
       </div>
      <Switch>
-      <Route path="/welcome" component={Welcome}/>
       <Route path="/register" component={Registration}/>
       <Route path="/maketake" component={MakeTake}/>
       <Route path="/makequiz" component={MakeQuiz}/>
@@ -29,6 +28,7 @@ function App() {
       <Route path="/randomquiz" component={RandomQuiz}/>
       <Route path="/endquiz" component={EndQuiz}/>
       <Route path="/scorescreen" component={ScoreScreen}/>
+      <Route path="/" component={Welcome}/>
       </Switch> 
 
     </Router>
