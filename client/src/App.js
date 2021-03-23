@@ -28,6 +28,7 @@ function App() {
       <Route path="/randomquiz" component={RandomQuiz}/>
       <Route path="/endquiz" component={EndQuiz}/>
       <Route path="/scorescreen" component={ScoreScreen}/>
+      {/* welcome needs to remain on the bottom of this list */}
       <Route path="/" component={Welcome}/>
       </Switch> 
 
