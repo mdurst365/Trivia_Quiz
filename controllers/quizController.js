@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// quiz table controller methods
+// quiz table methods
 module.exports = {
   getAll: (req, res) => {
     db.Quiz
