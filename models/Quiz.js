@@ -4,7 +4,7 @@ const User = require("./User");
 const Schema = mongoose.Schema;
 
 const quizSchema = new Schema({
-    user_id: [{ type: Schema.Types.ObjectId, ref: User }],
+    user_id: String, //{ type: Schema.Types.ObjectId, ref: User },
     category: {
         type: String,
         required: true
