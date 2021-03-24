@@ -123,3 +123,9 @@ h6 {
     padding: 20px;
     font-size: 1.25em;
   }
+
+.test {
+    width: 200px;
+    background-color: red;
+}
+

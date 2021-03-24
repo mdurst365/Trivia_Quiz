@@ -8,7 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
+// import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 
 // from materialUI
@@ -50,6 +50,7 @@ const BootstrapInput = withStyles((theme) => ({
   const useStyles = makeStyles((theme) => ({
     margin: {
       margin: theme.spacing(1),
+      minWidth: 600,
     },
   }));
 
@@ -67,10 +68,11 @@ function SelectQuiz () {
       };
     return (
         <div className="WelcomeBox space">
-        <h1 class="smallHeader"><br />SELECT QUIZ<br />&nbsp;</h1>  
+        <h1 className="smallHeader"><br />SELECT QUIZ<br />&nbsp;</h1>  
         <br/>
         <h3>
-        Category: <FormControl className={classes.margin}>
+       <FormControl className={classes.margin}> 
+       <p className="bold">Category:</p>
         <InputLabel id="demo-customized-select-label"></InputLabel>
         <Select
           labelId="demo-customized-select-label"
@@ -109,7 +111,8 @@ function SelectQuiz () {
         </Select>
       </FormControl>
         <div className="space"></div>
-        Difficulty: <FormControl className={classes.margin}>
+         <FormControl className={classes.margin}>
+           <p className="bold">Difficulty:</p>
         <InputLabel id="demo-customized-select-label"></InputLabel>
         <Select
           labelId="demo-customized-select-label"
