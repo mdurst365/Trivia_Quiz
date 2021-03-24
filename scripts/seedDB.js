@@ -5,32 +5,44 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trivia_db");
 
+const userId1 = new mongoose.Types.ObjectId();
+const userId2 = new mongoose.Types.ObjectId();
+const userId3 = new mongoose.Types.ObjectId();
+const userId4 = new mongoose.Types.ObjectId();
+const userId5 = new mongoose.Types.ObjectId();
+
 const userSeed = [
     {
+        id: userId1,
         email: "test1@email.com",
         password: "password1"
     },
     {
+        id: userId2,
         email: "test2@email.com",
         password: "password2"
     },
     {
+        id: userId3,
         email: "test3@email.com",
         password: "password3"
     },
     {
+        id: userId4,
         email: "test4@email.com",
         password: "password4"
     },
     {
+        id: userId5,
         email: "test5@email.com",
         password: "password5"
     },
 ];
 
+
 const quizSeed = [
     {
-        user_id: "user1",
+        user_id: userId1,
         category: "Geography",
         title: "State Capitals Quiz",
         questions:
@@ -59,7 +71,7 @@ const quizSeed = [
             ]
     },
     {
-        user_id: "user2",
+        user_id: userId2,
         category: "History",
         title: "US President Quiz",
         questions:
@@ -88,7 +100,7 @@ const quizSeed = [
             ]
     },
     {
-        user_id: "user3",
+        user_id: userId3,
         category: "Science",
         title: "Periodic Table Quiz",
         questions:
