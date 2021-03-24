@@ -1,4 +1,5 @@
 const express = require("express");
+const logger = require("morgan"); 
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
@@ -10,7 +11,9 @@ const app = express();
 
 app.use([
   express.urlencoded({ extended: true }),
-  express.json()
+  express.json(),
+  // Enable morgan log
+  logger("dev")
 ]);
 
 // Serve static assets
