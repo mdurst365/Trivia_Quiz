@@ -22,7 +22,11 @@ function EndQuiz (){
             <div className="space"></div>
                     <Button type="submit" variant="outlined">Retake Quiz</Button>
                     &nbsp; &nbsp;
-                    <Button type="submit" variant="outlined">New Quiz</Button>
+                <Button type="submit" variant="outlined">
+                    <Link to="maketake">
+                    New Quiz
+                    </Link>
+                    </Button>
             <div className="space"></div>
         </div>
     )
