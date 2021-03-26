@@ -34,6 +34,7 @@
     "opentdb-api": "^1.0.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-rewards": "^1.1.2",
     "react-router-dom": "^5.2.0"
   }
 }

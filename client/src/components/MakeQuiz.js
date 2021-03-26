@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 
 
-
 function MakeQuiz() {
     const [count, setCount] = useState(1);
     const [formObj, setFormObj] = useState({});
@@ -45,11 +44,24 @@ function MakeQuiz() {
                     Correct: <input type="text" placeholder="Correct Answer"></input>
                 </h3>
             </form>
-            <div className="space">
-                {/* <Link to="/makequizfinish"> */}
-                    <Button onClick={handleClick} type="submit" variant="outlined">Next</Button>
-                {/* </Link> */}
-            </div>
+            <div className="space"></div>
+
+
+                {count === 5 ? 
+                <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
+                <Link to="/selectquiz">
+                <Button type="submit" variant="outlined">Finish</Button> 
+                </Link>&nbsp;&nbsp;
+                </div>:
+                <div>
+                <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
+                <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
+                </div>
+                }
+           
+
+
+              <div className="space"></div>
         </div>
     );
 }
