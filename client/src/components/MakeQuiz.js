@@ -17,8 +17,6 @@ function MakeQuiz() {
     const [correctAnswers, setcorrectAnswers] = useState([]);
     const [finished, setFinished] = useState(false);
 
-
-
     // const [showElement, setShowElement] = useState(false);
 
 
@@ -37,6 +35,10 @@ function MakeQuiz() {
     const handleClick = (event) => {
 
         event.preventDefault();
+
+        // const handleShowElement = () => {
+        //     setShowElement(!showElement);
+        // };
 
         var {
             inputTitle, inputCategory,
@@ -68,8 +70,8 @@ function MakeQuiz() {
                 answers: answers,
                 correct_ans: correctAnswers
             })
-            .then(setFinished(true))
-            .catch(err => console.log(err));
+                .then(setFinished(true))
+                .catch(err => console.log(err));
         }
 
         console.log(title);
@@ -79,10 +81,6 @@ function MakeQuiz() {
         console.log(correctAnswers);
 
     };
-
-    // const handleShowElement = () => {
-    //     setShowElement(!showElement);
-    // };
 
     if (finished) {
         return <Redirect to="/SelectQuiz" />
@@ -123,12 +121,12 @@ function MakeQuiz() {
             </form>
             <div className="space">
 
-                { questions.length === 5 ?
+                {questions.length === 5 ?
                     <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
                     {/* <Link to="/SelectQuiz"> */}
-                            <Button type="submit" onClick={handleClick} variant="outlined">Finish</Button>
+                        <Button type="submit" onClick={handleClick} variant="outlined">Finish</Button>
                         {/* </Link>&nbsp;&nbsp; */}
-                </div> :
+                    </div> :
                     <div>
                         <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
                 </div>

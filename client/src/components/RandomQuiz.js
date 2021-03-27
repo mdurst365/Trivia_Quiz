@@ -1,23 +1,22 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
 const opentdb = require('opentdb-api');
- 
+
 var options = {
-    amount: 10,
-    category: 'science',
-    difficulty: 'easy',
+    amount: 5,
+    category: 'any',
     type: 'multiple'
 }
- 
+
 opentdb.getTrivia(options).then(result => {
-  console.log(result);
+    console.log(result);
 });
 
-function RandomQuiz () {
+function RandomQuiz() {
     return (
         <div className="WelcomeBox space">
             <h1 className="smallHeader"><br />RANDOM QUIZ<br />&nbsp;</h1>
@@ -35,11 +34,11 @@ function RandomQuiz () {
             <p className="space">
                 <Button type="submit" variant="outlined" color="primary">
                     <Link to="/endquiz">
-                    Next
+                        Next
                     </Link>
-                    </Button>
-                    </p>
-         </div>
+                </Button>
+            </p>
+        </div>
     );
 }
 
