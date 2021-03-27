@@ -3,13 +3,15 @@ import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
-
+import dbAPI from "../utils/dbAPI";
 
 
 function MakeQuiz() {
 
     const [count, setCount] = useState(1);
     const [formObj, setFormObj] = useState({});
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
     const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [correctAnswers, setcorrectAnswers] = useState([]);
@@ -17,7 +19,7 @@ function MakeQuiz() {
 
 
     // const [showElement, setShowElement] = useState(false);
-    
+
 
     // increment question number
     const handleCount = () => {
@@ -31,21 +33,49 @@ function MakeQuiz() {
     };
 
 
-    const handleNext = (event) => {
-        
+    const handleClick = (event) => {
+
         event.preventDefault();
 
-        handleCount();
+        var {
+            inputTitle, inputCategory, 
+            inputQuestion,
+            inputAnswerA, inputAnswerB, inputAnswerC, inputAnswerD,
+            inputCorrectAnswer
+        } = formObj;
 
-        const {answerA, answerB, answerC, answerD, question, correctAnswer} = formObj;
+        if (count === 1) {
+            setTitle(inputTitle);
+            setCategory(inputCategory);
+        }
 
-        setQuestions(questions.concat(question));
-        setAnswers(answers.concat(answerA, answerB, answerC, answerD));
-        setcorrectAnswers(correctAnswers.concat(correctAnswer));
+        if (count < 5) {
+            handleCount();
+        }
 
+        setQuestions(questions.concat(inputQuestion));
+        setAnswers(answers.concat(inputAnswerA, inputAnswerB, inputAnswerC, inputAnswerD));
+        setcorrectAnswers(correctAnswers.concat(inputCorrectAnswer));
+
+        if (questions.length === 5) {
+
+            dbAPI.createQuiz({
+                // user_id:
+                title: title,
+                category: category,
+                questions: questions,
+                answers: answers,
+                correct_ans: correctAnswers
+            }).catch(err => console.log(err));
+
+        }
+
+        console.log(title);
+        console.log(category);
         console.log(questions);
         console.log(answers);
         console.log(correctAnswers);
+
     };
 
     // const handleShowElement = () => {
@@ -60,44 +90,44 @@ function MakeQuiz() {
                 <h3 className="formSmall">
                     <br />
                     <div className="space">
-                        Quiz Title: <input name="title" onChange={handleInputChange} type="text" placeholder="Title"></input>
+                        Quiz Title: <input name="inputTitle" onChange={handleInputChange} type="text" placeholder="Title"></input>
                     </div>
                     <div className="space">
-                        Category: <input name="category" onChange={handleInputChange} type="text" placeholder="Category"></input>
+                        Category: <input name="inputCategory" onChange={handleInputChange} type="text" placeholder="Category"></input>
                     </div>
                     <div className="space">
-                        Question: <input name="question" onChange={handleInputChange} type="text" placeholder="Input Question"></input>
+                        Question: <input name="inputQuestion" onChange={handleInputChange} type="text" placeholder="Input Question"></input>
                     </div>
                     <div className="space">
-                        Answer A: <input name="answerA" onChange={handleInputChange} type="text" placeholder="Answer A"></input>
+                        Answer A: <input name="inputAnswerA" onChange={handleInputChange} type="text" placeholder="Answer A"></input>
                     </div>
                     <div className="space">
-                        Answer B: <input name="answerB" onChange={handleInputChange} type="text" placeholder="Answer B"></input>
+                        Answer B: <input name="inputAnswerB" onChange={handleInputChange} type="text" placeholder="Answer B"></input>
                     </div>
                     <div className="space">
-                        Answer C: <input name="answerC" onChange={handleInputChange} type="text" placeholder="Answer C"></input>
+                        Answer C: <input name="inputAnswerC" onChange={handleInputChange} type="text" placeholder="Answer C"></input>
                     </div>
                     <div className="space">
-                        Answer D: <input name="answerD" onChange={handleInputChange} type="text" placeholder="Answer D"></input>
+                        Answer D: <input name="inputAnswerD" onChange={handleInputChange} type="text" placeholder="Answer D"></input>
                     </div>
                     <div className="space">
-                        Correct: <input name="correctAnswer" onChange={handleInputChange} type="text" placeholder="Correct Answer"></input>
+                        Correct: <input name="inputCorrectAnswer" onChange={handleInputChange} type="text" placeholder="Correct Answer"></input>
                     </div>
                 </h3>
             </form>
             <div className="space">
 
-                {count === 5 ? 
-                <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
-                <Link to="/selectquiz">
-                <Button type="submit" variant="outlined">Finish</Button> 
-                </Link>&nbsp;&nbsp;
-                </div>:
-                <div>
-                <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
+                {count === 5 ?
+                    <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
+                    <Link to="/SelectQuiz">
+                            <Button onClick={handleClick} type="submit" variant="outlined">Finish</Button>
+                    </Link>&nbsp;&nbsp;
+                </div> :
+                    <div>
+                        <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
                 <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
                 </div>
-                }   
+                }
 
             </div>
         </div>
