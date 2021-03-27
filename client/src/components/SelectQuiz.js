@@ -8,7 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-// import NativeSelect from '@material-ui/core/NativeSelect';
+//import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 
 // from materialUI
@@ -51,6 +51,7 @@ const BootstrapInput = withStyles((theme) => ({
     margin: {
       margin: theme.spacing(1),
       minWidth: 600,
+
     },
   }));
 
@@ -62,24 +63,37 @@ function SelectQuiz () {
     const [difficulty, setDifficulty] = React.useState('');
     const handleChange = (event) => {
       setCategory(event.target.value);
+      console.log(event.target.value)
+      return event.target.value
     };
     const handleChange2 = (event) => {
-        setDifficulty(event.target.value);
-      };
+      setDifficulty(event.target.value);
+      console.log(event.target.value)
+      return event.target.value
+    };
+
+    const categoryRef = React.useRef();
+    const difficultyRef = React.useRef();
+
+    function makeCall(event) {
+        event.preventDefault();
+        let parsedURL = "https://opentdb.com/api.php?amount=5";
+        fetch(parsedURL).then(res => res.json()).then((result) => console.log(result));
+    }
     return (
         <div className="WelcomeBox space">
-        <h1 className="smallHeader"><br />SELECT QUIZ<br />&nbsp;</h1>  
+        <h1 class="smallHeader"><br />SELECT QUIZ<br />&nbsp;</h1>  
         <br/>
         <h3>
-       <FormControl className={classes.margin}> 
-       <p className="bold">Category:</p>
+        Category: <FormControl className={classes.margin}>
         <InputLabel id="demo-customized-select-label"></InputLabel>
         <Select
-          labelId="demo-customized-select-label"
-          id="demo-customized-select"
+          labelId="categorySelect"
+          id="categorySelector"
           value={category}
           onChange={handleChange}
           input={<BootstrapInput />}
+          ref= {node => categoryRef.current = node}
         >
           <MenuItem value="">
             <em>Category</em>
@@ -111,15 +125,15 @@ function SelectQuiz () {
         </Select>
       </FormControl>
         <div className="space"></div>
-         <FormControl className={classes.margin}>
-           <p className="bold">Difficulty:</p>
+        Difficulty: <FormControl className={classes.margin}>
         <InputLabel id="demo-customized-select-label"></InputLabel>
         <Select
           labelId="demo-customized-select-label"
-          id="demo-customized-select"
+          id="difficultySelector"
           value={difficulty}
           onChange={handleChange2}
           input={<BootstrapInput />}
+          ref= {difficultyRef}
         >
           <MenuItem value="">
             <em>Difficulty</em>
@@ -132,8 +146,8 @@ function SelectQuiz () {
         <div className="space"></div>
 
         <p className="space">
-            <Button type="submit" variant="outlined" color="primary">
-            <Link to="/randomquiz"> Random Quiz</Link>
+            <Button type="submit" variant="outlined" color="primary" onClick={(event) => makeCall(event)}>
+            <Link> Random Quiz</Link>
                 </Button>
         </p>
         

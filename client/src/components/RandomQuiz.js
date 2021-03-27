@@ -7,9 +7,8 @@ import { Link } from 'react-router-dom';
 const opentdb = require('opentdb-api');
 
 var options = {
-    amount: 10,
-    category: 'science',
-    difficulty: 'easy',
+    amount: 5,
+    category: 'any',
     type: 'multiple'
 }
 
