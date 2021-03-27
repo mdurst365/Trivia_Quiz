@@ -7,28 +7,35 @@ function Registration() {
     return (
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
-                <p class="space bold">REGISTERED USERS</p>
-                <form>
-                    <br/>
+            <p class="space bold">REGISTERED USERS</p>
+            <form>
+                <br />
                     Username: <input type="username" placeholder="Username"></input>
-                    <br/><br/>
+                <br /><br />
                     Password: <input type="password" placeholder="Password"></input>
-                </form>
-                <p className="space">
-                    <Button type="submit" variant="outlined">
-                    <Link to="/MakeTake">
-                    Sign In
-                    </Link>
-                    </Button>
-                    </p>
-                <p className="space bold">LOGIN AS GUEST
-                <br/><br/>
+            </form>
+            <p className="space">
                 <Button type="submit" variant="outlined">
-                <Link to="/MakeTake">
-                    Login
+                    <Link to="/MakeTake">
+                        Sign In
                     </Link>
-                    </Button></p>
-                </div>
+                </Button>
+            </p>
+            <p className="space">
+                <Button type="submit" variant="outlined">
+                    <Link to="/MakeTake">
+                        Logout
+                    </Link>
+                </Button>
+            </p>
+            <p className="space bold">LOGIN AS GUEST
+                <br /><br />
+                <Button type="submit" variant="outlined">
+                    <Link to="/MakeTake">
+                        Login
+                    </Link>
+                </Button></p>
+        </div>
     );
 }
 
