@@ -14,8 +14,8 @@ function CreateAccount() {
     };
     return (
         <div className="WelcomeBox space">
-            <h1 className="smallHeader"><br />WELCOME<br />&nbsp;</h1>
-            <p className="space bold">Create Your Account</p>
+            <h1 className="smallHeader"><br />WELCOME NEW USER<br />&nbsp;</h1>
+            <p className="space bold">CREATE YOUR ACCOUNT</p>
             <form onSubmit={handleSubmit}>
                 <br />
                     Username: <input type="username" placeholder="Username"
@@ -30,9 +30,10 @@ function CreateAccount() {
                 >
                 </input>
                 <p className="space">
+                    <Link to="/register">
                     <Button type="submit" variant="outlined">
                         submit
-                </Button>
+                </Button></Link>
                 </p>
             </form>
 

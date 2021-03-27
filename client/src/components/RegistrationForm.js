@@ -7,7 +7,16 @@ function Registration() {
     return (
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
-            <p class="space bold">REGISTERED USERS</p>
+            
+            <p class="space bold">NEW USERS</p>
+            <p className="space">
+                <Button type="submit" variant="outlined">
+                    <Link to="/CreateAccount">
+                        Create Account
+                    </Link>
+                </Button>
+            </p>
+            <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
                     Username: <input type="username" placeholder="Username"></input>
@@ -21,13 +30,7 @@ function Registration() {
                     </Link>
                 </Button>
             </p>
-            <p className="space">
-                <Button type="submit" variant="outlined">
-                    <Link to="/CreateAccount">
-                        Create Account
-                    </Link>
-                </Button>
-            </p>
+           
             <p className="space bold">LOGIN AS GUEST
                 <br /><br />
                 <Button type="submit" variant="outlined">
