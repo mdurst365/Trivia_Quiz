@@ -3,7 +3,7 @@ import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
-function Registration() {
+function CreateAccount() {
     return (
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
@@ -39,4 +39,4 @@ function Registration() {
     );
 }
 
-export default Registration;
+export default CreateAccount;
