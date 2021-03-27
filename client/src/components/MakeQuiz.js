@@ -1,20 +1,21 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import dbAPI from "../utils/dbAPI";
 
 
 function MakeQuiz() {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
     const [formObj, setFormObj] = useState({});
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [correctAnswers, setcorrectAnswers] = useState([]);
+    const [finished, setFinished] = useState(false);
 
 
 
@@ -38,7 +39,7 @@ function MakeQuiz() {
         event.preventDefault();
 
         var {
-            inputTitle, inputCategory, 
+            inputTitle, inputCategory,
             inputQuestion,
             inputAnswerA, inputAnswerB, inputAnswerC, inputAnswerD,
             inputCorrectAnswer
@@ -66,8 +67,9 @@ function MakeQuiz() {
                 questions: questions,
                 answers: answers,
                 correct_ans: correctAnswers
-            }).catch(err => console.log(err));
-
+            })
+            .then(setFinished(true))
+            .catch(err => console.log(err));
         }
 
         console.log(title);
@@ -82,10 +84,14 @@ function MakeQuiz() {
     //     setShowElement(!showElement);
     // };
 
+    if (finished) {
+        return <Redirect to="/SelectQuiz" />
+    }
+
     return (
         <div className="WelcomeBox space">
             <h1 className="smallHeader"><br />MAKE A QUIZ<br />&nbsp;</h1>
-            <h6 className="space smallright">Question: {count}/5</h6>
+            <h6 className="space smallright">Questions Added: {count}/5</h6>
             <form>
                 <h3 className="formSmall">
                     <br />
@@ -117,15 +123,14 @@ function MakeQuiz() {
             </form>
             <div className="space">
 
-                {count === 5 ?
+                { questions.length === 5 ?
                     <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
-                    <Link to="/SelectQuiz">
-                            <Button onClick={handleClick} type="submit" variant="outlined">Finish</Button>
-                    </Link>&nbsp;&nbsp;
+                    {/* <Link to="/SelectQuiz"> */}
+                            <Button type="submit" onClick={handleClick} variant="outlined">Finish</Button>
+                        {/* </Link>&nbsp;&nbsp; */}
                 </div> :
                     <div>
                         <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
-                <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
                 </div>
                 }
 
