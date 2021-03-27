@@ -48,14 +48,15 @@ function MakeQuiz() {
 
 
                 {count === 5 ? 
-                <div> <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
+                <div> 
+                    {/* <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp; */}
                 <Link to="/selectquiz">
                 <Button type="submit" variant="outlined">Finish</Button> 
                 </Link>&nbsp;&nbsp;
                 </div>:
                 <div>
                 <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
-                <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp;
+                {/* <Button type="submit" variant="outlined">Back</Button> &nbsp;&nbsp; */}
                 </div>
                 }
            

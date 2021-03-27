@@ -24,7 +24,7 @@ function Registration() {
             <p className="space">
                 <Button type="submit" variant="outlined">
                     <Link to="/CreateAccount">
-                        Creat Account
+                        Create Account
                     </Link>
                 </Button>
             </p>
