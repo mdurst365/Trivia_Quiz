@@ -21,7 +21,7 @@ function MakeTake() {
             <p className="space">
                 <Button type="submit" variant="outlined" color="primary">
                     <Link to="/selectquiz">
-                    Take a Random Quiz
+                    Take a Quiz
                     </Link>
                     </Button>
                     </p>
