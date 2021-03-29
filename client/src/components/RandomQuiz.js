@@ -28,11 +28,6 @@ function RandomQuiz () {
     const [questions, setQuestions] = useState();
     // want to check the selection with the correct answer
 
-    var options = {
-        amount: 5,
-        category: 'any',
-        type: 'multiple'
-    }
 
     const checkAnswer = (event) => {
         // increment the current question and check to see if we have reached the end
@@ -50,11 +45,17 @@ function RandomQuiz () {
         // if the selection is incorrect, move to the next question (might need to get rid of the next button)
     }
 
-    useEffect((options) => {
+    useEffect(() => {
+        var options = {
+            amount: 5,
+            category: 'any',
+            type: 'multiple'
+        }
         opentdb.getTrivia(options).then(result => {
             console.log(result);
             let arrayQuestion = [result[0].question, result[0].correct_answer, result[0].incorrect_answers[0], result[0].incorrect_answers[1], result[0].incorrect_answers[2]]
             setQuestions(arrayQuestion);
+            console.log(questions)
         })
 
     },[])
