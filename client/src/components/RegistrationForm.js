@@ -1,22 +1,26 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import React, { useState } from "react";
-import dbAPI from "../utils/dbAPI";
 import { Link } from 'react-router-dom';
+import dbAPI from "../utils/dbAPI";
+
+import React, { useState, useEffect } from "react";
 
 
 function Registration() {
-    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const login = () => {
-        dbAPI.createUser({
-            email: email,
-            password: password
-        }).then(res => {
-            console.log(res)
-        })
-    };
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        loadUsers()
+    }, [])
+    const loadUsers = () => {
+        dbAPI.getUsers()
+            .then(results =>
+                setUsers(results.data)
+            )
+            .catch(err => console.log(err));
+    }
 
     return (
         <div className="WelcomeBox space">
@@ -33,18 +37,16 @@ function Registration() {
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
-                    Username: <input type="email" placeholder="email"
-                    onChange={event => {
-                        setEmail(event.target.value)
-                    }} ></input>
+                    Username: <input type="username" placeholder="Username"
+                    onChange={(event) => { setUsername(event.target.value) }} ></input>
                 <br /><br />
-                    Password: <input type="password" placeholder="Password" onChange={event => {
-                    setPassword(event.target.value)
-                }}
+                    Password: <input type="password" placeholder="Password"
+                    onChange={(event) => { setPassword(event.target.value) }}
+
                 ></input>
             </form>
             <p className="space">
-                <Button type="submit" variant="outlined" onClick={login}>
+                <Button type="submit" variant="outlined" >
                     <Link to="/MakeTake">
                         Sign In
                     </Link>
