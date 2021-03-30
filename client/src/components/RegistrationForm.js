@@ -25,12 +25,12 @@ function Registration() {
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
-                    Username: <input type="username" placeholder="Username"
+                   <span className="sans">Username:</span>  <input type="username" placeholder="Username"
                     onChange={event => {
                         setUsername(event.target.value)
                     }} ></input>
                 <br /><br />
-                    Password: <input type="password" placeholder="Password" onChange={event => {
+                <span className="sans">Password: </span>g<input type="password" placeholder="Password" onChange={event => {
                     setPassword(event.target.value)
                 }}
                 ></input>
