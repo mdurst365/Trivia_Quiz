@@ -2,17 +2,16 @@ import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import React, { useState } from "react";
-
+import dbAPI from "../utils/dbAPI";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 
 function Registration() {
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const login = () => {
-        axios.post("http://localhost3001/login", {
-            username: username,
+        dbAPI.createUser({
+            email: email,
             password: password
         }).then(res => {
             console.log(res)
@@ -34,9 +33,9 @@ function Registration() {
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
-                    Username: <input type="username" placeholder="Username"
+                    Username: <input type="email" placeholder="email"
                     onChange={event => {
-                        setUsername(event.target.value)
+                        setEmail(event.target.value)
                     }} ></input>
                 <br /><br />
                     Password: <input type="password" placeholder="Password" onChange={event => {
