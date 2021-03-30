@@ -1,8 +1,6 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import React, { useState } from "react";
-
 import { Link } from 'react-router-dom';
 import React, { useState } from "react";
 import axios from 'axios';
@@ -32,7 +30,7 @@ function Registration() {
                         setUsername(event.target.value)
                     }} ></input>
                 <br /><br />
-                <span className="sans">Password: </span>g<input type="password" placeholder="Password" onChange={event => {
+                <span className="sans">Password: </span><input type="password" placeholder="Password" onChange={event => {
                     setPassword(event.target.value)
                 }}
                 ></input>
