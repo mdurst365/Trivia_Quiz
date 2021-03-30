@@ -4,28 +4,31 @@ import React from "react";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
-function SelectQuiz () {
+function SelectQuiz() {
     return (
-      <div className="WelcomeBox space">
-      <h1 class="smallHeader"><br />SELECT A QUIZ<br />&nbsp;</h1>
-        <h3>
-        <p className="space">
-            <Button type="submit" variant="outlined" color="primary">
-            <Link to="/randomquiz"> 
-            Random Quiz
-            </Link>
-                </Button>
-        </p>
-        
-        <p className="space"><Button type="submit" variant="outlined" color="primary">Pre-Made Quiz</Button></p>
-        <div className="space"></div>
-        Quiz ID: <input type="text" placeholder="Quiz ID"></input>
-        </h3>
-        <div className="space"></div>
+        <div className="WelcomeBox space">
+            <h1 class="smallHeader"><br />SELECT A QUIZ<br />&nbsp;</h1>
+            <h3>
+                <p className="space">
+                    <Button type="submit" variant="outlined" color="primary">
+                        <Link to="/randomquiz">
+                            Random Quiz
+                        </Link>
+                    </Button>
+                </p>
+
+                <p className="space">
+                    <Button type="submit" variant="outlined" color="primary">
+                        <Link to="/PremadeQuiz">
+                            Pre-Made Quiz
+                        </Link>
+                    </Button>
+                </p>
+            </h3>
         </div>
     )
 }
-   
+
 export default SelectQuiz;
 
 
@@ -80,7 +83,7 @@ export default SelectQuiz;
 //       },
 //     },
 //   }))(InputBase);
-  
+
 //   const useStyles = makeStyles((theme) => ({
 //     margin: {
 //       margin: theme.spacing(1),
@@ -170,7 +173,7 @@ export default SelectQuiz;
 //             <Link to="/randomquiz"> Random Quiz</Link>
 //                 </Button>
 //         </p>
-        
+
 
 //         <p className="space"><Button type="submit" variant="outlined" color="primary">Pre-Made Quiz</Button></p>
 //         <div className="space"></div>
