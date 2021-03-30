@@ -2,38 +2,39 @@ import React, { useState } from "react";
 import "./assets/css_reset.css";
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
+
 import { Link } from 'react-router-dom';
 
 function CreateAccount() {
-    const [enteredUserName, setEnteredUserName] = useState("");
-    const [enteredPassword, setEnteredPassword] = useState("");
-    const handleSubmit = e => {
-        e.preventDefault();
-        console.log("username is " + enteredUserName);
-        console.log("password is " + enteredPassword);
+    const [userNameRegistered, setUserNameRegestered] = useState("");
+    const [passwordRegistered, setPasswordRegestered] = useState("");
+    const register = () => {
+        axios.post("http://localhost3001/register", {
+            username: userNameRegistered,
+            password: passwordRegistered
+        }).then(res => {
+            console.log(res)
+        })
     };
     return (
         <div className="WelcomeBox space">
             <h1 className="smallHeader"><br />WELCOME NEW USER<br />&nbsp;</h1>
             <p className="space bold">CREATE YOUR ACCOUNT</p>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <br />
-                    Username: <input type="username" placeholder="Username"
-                    onChange={event => {
-                        setEnteredUserName(event.target.value)
-                    }}></input>
+                    Username: <input type="text" placeholder="Username"
+                    onChange={(event) => { setUserNameRegestered(event.target.value) }}></input>
                 <br /><br />
                     Password: <input type="password" placeholder="Password"
-                    onChange={event => {
-                        setEnteredPassword(event.target.value)
-                    }}
+                    onChange={(event) => { setPasswordRegestered(event.target.value) }}
                 >
 
                 </input>
 
                 <p className="space">
                     <Link to="/register">
-                        <Button type="submit" variant="outlined">
+                        <Button type="submit" variant="outlined" onClick={register}>
                             submit
                 </Button></Link>
                 </p>
