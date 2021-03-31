@@ -26,12 +26,12 @@ function CreateAccount() {
                    <span className="sans"> Username: </span> 
                    <input type="username" placeholder="Username"
                     onChange={(event) => 
-                    { setUserNameRegestered(event.target.value) }}>      
+                    { setEmail(event.target.value) }}>      
                     </input>
 
                 <br /><br />
                     <span className="sans">Password: </span><input type="password" placeholder="Password"
-                    onChange={(event) => { setPasswordRegestered(event.target.value) }}
+                    onChange={(event) => { setPassword(event.target.value) }}
                 >
 
                 </input>
