@@ -15,12 +15,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from './components/WelcomeBox';
 
 // Import the useAuthTokenStore hook.
-// import { useAuthTokenStore } from "./utils/auth";
+import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
 
     // Use the hook to reauthenticate stored tokens.
-    // useAuthTokenStore();
+    useAuthTokenStore();
 
     /** Rest of your App component code here */
 
