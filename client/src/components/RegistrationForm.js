@@ -45,7 +45,8 @@ function Registration() {
                     </input>
 
                 <br /><br />
-                    Password: <input type="password" placeholder="Password"
+                <span className="sans">Password: </span> 
+                <input type="password" placeholder="Password"
                     onChange={(event) => { setPassword(event.target.value) }}
 
                 ></input>
