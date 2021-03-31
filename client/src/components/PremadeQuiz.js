@@ -11,7 +11,7 @@ function PremadeQuiz() {
 
     const [quizes, setQuizes] = useState([]);
     const [quiz, setQuiz] = useState([]);
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const [finished, setFinished] = useState(false);
 
     // const [question, setQuestion] = useState([]);
@@ -28,6 +28,10 @@ function PremadeQuiz() {
     useEffect(() => {
         loadQuizes()
     }, [])
+
+    useEffect(() => {
+       setTimeout(() => setFinished(true), 6000)
+    }, [quiz])
 
     const loadQuizes = () => {
         dbAPI.getQuizes()
@@ -55,7 +59,6 @@ function PremadeQuiz() {
         console.log(event.currentTarget.value);
 
         loadQuizById(id);
-    
 
 
         // var [
