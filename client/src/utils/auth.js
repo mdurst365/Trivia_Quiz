@@ -39,7 +39,7 @@ const applyAuthToken = token => {
 
 export const useAuthTokenStore = () => {
 
-    const [ ,dispatch ] = useStoreContext();
+    const [ dispatch ] = useStoreContext();
     const [ isDone, setIsDone ] = useState(false);
 
     const history = useHistory();

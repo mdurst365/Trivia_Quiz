@@ -14,7 +14,16 @@ import PremadeQuiz from './components/PremadeQuiz';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from './components/WelcomeBox';
 
+// Import the useAuthTokenStore hook.
+import { useAuthTokenStore } from "./utils/auth";
+
 function App() {
+
+    // Use the hook to reauthenticate stored tokens.
+    useAuthTokenStore();
+
+    /** Rest of your App component code here */
+
   return (
     <Router basename={ process.env.PUBLIC_URL }>
       <div className="App">

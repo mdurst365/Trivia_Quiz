@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./assets/css_reset.css";
+import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import dbAPI from "../utils/dbAPI";
 import { Link } from 'react-router-dom';
 
+
 function CreateAccount() {
-    const [userNameRegistered, setUserNameRegestered] = useState("");
-    const [passwordRegistered, setPasswordRegestered] = useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const register = () => {
-        axios.post("http://localhost3001/register", {
-            username: userNameRegistered,
-            password: passwordRegistered
+        dbAPI.createUser({
+            email: email,
+            password: password
         }).then(res => {
             console.log(res)
         })
@@ -23,11 +23,15 @@ function CreateAccount() {
             <p className="space bold">CREATE YOUR ACCOUNT</p>
             <form>
                 <br />
-                    Username: <input type="text" placeholder="Username"
-                    onChange={(event) => { setUserNameRegestered(event.target.value) }}></input>
+                   <span className="sans"> Username: </span> 
+                   <input type="username" placeholder="Username"
+                    onChange={(event) => 
+                    { setEmail(event.target.value) }}>      
+                    </input>
+
                 <br /><br />
-                    Password: <input type="password" placeholder="Password"
-                    onChange={(event) => { setPasswordRegestered(event.target.value) }}
+                    <span className="sans">Password: </span><input type="password" placeholder="Password"
+                    onChange={(event) => { setPassword(event.target.value) }}
                 >
 
                 </input>
