@@ -55,11 +55,11 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"]
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"]
             ],
         correct_ans:
             [
@@ -67,7 +67,7 @@ const quizSeed = [
                 "answer2",
                 "answer3",
                 "answer4",
-                "answer5"
+                "answer1"
             ]
     },
     {
@@ -84,11 +84,11 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"]
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"]
             ],
         correct_ans:
             [
@@ -96,7 +96,7 @@ const quizSeed = [
                 "answer2",
                 "answer3",
                 "answer4",
-                "answer5"
+                "answer2"
             ]
     },
     {
@@ -113,11 +113,11 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"],
-                ["answer1", "answer2", "answer3", "answer4", "answer5"]
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"],
+                ["answer1", "answer2", "answer3", "answer4"]
             ],
         correct_ans:
             [
@@ -125,7 +125,7 @@ const quizSeed = [
                 "answer2",
                 "answer3",
                 "answer4",
-                "answer5"
+                "answer3"
             ]
     },
 ];
