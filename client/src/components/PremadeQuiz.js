@@ -11,27 +11,22 @@ function PremadeQuiz() {
 
     const [quizes, setQuizes] = useState([]);
     const [quiz, setQuiz] = useState([]);
-    const [count, setCount] = useState(1);
+    const [questionCount, setQuestionCount] = useState(0);
+    const [answerCount, setAnswerCount] = useState(0);
     const [finished, setFinished] = useState(false);
 
-    // const [question, setQuestion] = useState([]);
-    // const [answer, setAnswer] = useState([]);
-    // const [correctAnswer, setCorrectAnswer] = useState([]);
-    // const [title, setTitle] = useState("");
-
-
     // increment question number
-    const handleCount = () => {
-        setCount(count + 1);
+    const handleQuestionCount = () => {
+        setQuestionCount(questionCount + 1);
     };
 
     useEffect(() => {
         loadQuizes()
     }, [])
 
-    useEffect(() => {
-       setTimeout(() => setFinished(true), 6000)
-    }, [quiz])
+    // useEffect(() => {
+    //    setTimeout(() => setFinished(true), 3000)
+    // }, [quiz])
 
     const loadQuizes = () => {
         dbAPI.getQuizes()
@@ -45,6 +40,7 @@ function PremadeQuiz() {
         dbAPI.getQuiz(id)
             .then(results =>
                 setQuiz(results.data),
+                setTimeout(() => setFinished(true), 1000),
                 console.log(quiz)
             )
             .catch(err => console.log(err));
@@ -60,28 +56,13 @@ function PremadeQuiz() {
 
         loadQuizById(id);
 
-
-        // var [
-
-        //     questions,
-        //     answers,
-        //     correct_ans, 
-        //     quizTitle
-
-        // ] = quiz;
-
-        // setQuestion(questions);
-        // setAnswer(answers);
-        // setCorrectAnswer(correct_ans);
-        // setTitle(quizTitle);
-
     }
 
     return (
 
         <div className="WelcomeBox space">
 
-            { quizes.length ? (
+            { quizes.length && !finished ? (
                 <List>
                     { quizes.map(quizData => (
                         <ListItem key={quizData._id}>
@@ -94,7 +75,7 @@ function PremadeQuiz() {
                     ))}
                 </List>
             ) : (
-                <h3>No quizes to display</h3>
+                <div></div>
             )}
 
             { finished ? (
@@ -102,7 +83,7 @@ function PremadeQuiz() {
                 <div>
 
                     <h1 className="smallHeader"><br /> Title {quiz.title} <br />&nbsp;</h1>
-                    <h6 className="space smallright">Question Number: {count}/5</h6>
+                    <h6 className="space smallright">Question Number: {questionCount+1}/5</h6>
                     <h2 className="space">Question: {quiz.questions[0]} </h2>
                     <Button className="space answerBtn" type="submit" variant="outlined" color="primary">A: {quiz.answers[0][0]} </Button>
                     <div className="space"></div>
@@ -117,18 +98,18 @@ function PremadeQuiz() {
 
             ) : (
 
-                <h3>No Quiz Selected</h3>
+                <h3>Select A Quiz</h3>
 
             )}
 
             <div className="space">
-                {count === 5 ?
+                {questionCount === 5 ?
                     <div>
                         <Button type="submit" onClick="" variant="outlined">Finish</Button>
                     </div>
                     :
                     <div>
-                        <Button onClick={handleCount} type="submit" variant="outlined">Next</Button> &nbsp;
+                        <Button onClick={handleQuestionCount} type="submit" variant="outlined">Next</Button> &nbsp;
                 </div>
                 }
             </div>
