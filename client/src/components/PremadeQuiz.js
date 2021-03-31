@@ -12,6 +12,7 @@ function PremadeQuiz() {
     const [quizes, setQuizes] = useState([]);
     const [quiz, setQuiz] = useState([]);
     const [count, setCount] = useState(0);
+    const [finished, setFinished] = useState(false);
 
     // const [question, setQuestion] = useState([]);
     // const [answer, setAnswer] = useState([]);
@@ -43,6 +44,7 @@ function PremadeQuiz() {
                 console.log(quiz)
             )
             .catch(err => console.log(err));
+
     };
 
     const selectQuiz = (event) => {
@@ -53,6 +55,8 @@ function PremadeQuiz() {
         console.log(event.currentTarget.value);
 
         loadQuizById(id);
+    
+
 
         // var [
 
@@ -90,20 +94,20 @@ function PremadeQuiz() {
                 <h3>No quizes to display</h3>
             )}
 
-            { !quiz.length ? (
+            { finished ? (
 
                 <div>
 
                     <h1 className="smallHeader"><br /> Title {quiz.title} <br />&nbsp;</h1>
-                    <h6 className="space smallright">Question: {count}/5</h6>
-                    <h2 className="space">Question: { quiz.questions[0] } </h2>
-                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">A: { quiz.answers[0][0] } </Button>
+                    <h6 className="space smallright">Question Number: {count}/5</h6>
+                    <h2 className="space">Question: {quiz.questions[0]} </h2>
+                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">A: {quiz.answers[0][0]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">B: { quiz.answers[0][1] } </Button>
+                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">B: {quiz.answers[0][1]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">C: { quiz.answers[0][2] } </Button>
+                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">C: {quiz.answers[0][2]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">D: { quiz.answers[0][3] } </Button>
+                    <Button className="space answerBtn" type="submit" variant="outlined" color="primary">D: {quiz.answers[0][3]} </Button>
                     <div className="space"></div>
 
                 </div>

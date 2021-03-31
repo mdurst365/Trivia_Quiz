@@ -47,6 +47,8 @@ function MakeQuiz() {
             inputCorrectAnswer
         } = formObj;
 
+        var inputAnswers = [[inputAnswerA, inputAnswerB, inputAnswerC, inputAnswerD]];
+
         if (count === 1) {
             setTitle(inputTitle);
             setCategory(inputCategory);
@@ -57,7 +59,7 @@ function MakeQuiz() {
         }
 
         setQuestions(questions.concat(inputQuestion));
-        setAnswers(answers.concat(inputAnswerA, inputAnswerB, inputAnswerC, inputAnswerD));
+        setAnswers(answers.concat(inputAnswers));
         setcorrectAnswers(correctAnswers.concat(inputCorrectAnswer));
 
         if (questions.length === 5) {
