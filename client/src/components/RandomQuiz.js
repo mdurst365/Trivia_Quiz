@@ -13,7 +13,7 @@ const opentdb = require('opentdb-api');
 var options = {
     amount: 5,
     category: 'any',
-    type: 'multiple'
+    type: 'multiple',
 }
 
 

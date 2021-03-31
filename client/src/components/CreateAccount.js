@@ -23,10 +23,14 @@ function CreateAccount() {
             <p className="space bold">CREATE YOUR ACCOUNT</p>
             <form>
                 <br />
-                    Username: <input type="text" placeholder="Username"
-                    onChange={(event) => { setUserNameRegestered(event.target.value) }}></input>
+                   <span className="sans"> Username: </span> 
+                   <input type="username" placeholder="Username"
+                    onChange={(event) => 
+                    { setUserNameRegestered(event.target.value) }}>      
+                    </input>
+
                 <br /><br />
-                    Password: <input type="password" placeholder="Password"
+                    <span className="sans">Password: </span><input type="password" placeholder="Password"
                     onChange={(event) => { setPasswordRegestered(event.target.value) }}
                 >
 
