@@ -126,8 +126,9 @@ function PremadeQuiz() {
 
             ) : (
 
-                <h3>Select A Quiz</h3>
-
+                <div className="smallHeader">
+                <h3><br />SELECT A QUIZ<br />&nbsp;</h3>
+                </div>
             )}
 
             <div className="space">
