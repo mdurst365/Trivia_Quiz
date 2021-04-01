@@ -8,6 +8,7 @@
     "start:prod": "node index.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -19,16 +20,21 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.16.3",
-    "fastest-validator": "^1.10.0",
+    "fastest-validator": "^1.10.1",
     "if-env": "^1.0.4",
     "jwt-decode": "^3.1.2",
-    "mongoose": "^5.12.1",
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0",
+    "opentdb-api": "^1.0.0",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "react-rewards": "^1.1.2",
+    "react-router-dom": "^5.2.0"
   }
 }

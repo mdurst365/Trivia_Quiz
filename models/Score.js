@@ -5,9 +5,11 @@ const User = require("./User");
 const Schema = mongoose.Schema;
 
 const scoreSchema = new Schema({
-    user_id: [{ type: Schema.Types.ObjectId, ref: User }],
-    quiz_id: [{ type: Schema.Types.ObjectId, ref: Quiz }],
+    user_id: String,//{ type: Schema.Types.ObjectId, ref: User },
+    quiz_id: String,//{ type: Schema.Types.ObjectId, ref: Quiz },
     attempts: Number,
+    title: String,
+    score: Number,
     highscore: Number
 });
 

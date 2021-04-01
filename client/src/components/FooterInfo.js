@@ -1,12 +1,12 @@
-import "./css_reset.css"
-import "./styles.css";
+import "./assets/css_reset.css"
+import "./assets/styles.css";
 import React from "react";
 
 function FooterInfo() {
     return (
         <div className="FooterInfo">
-            TRIVIA QUIZ &bull; Created for the Ohio State Coding Bootcamp<br/>
-            MIT License &bull; Rights Reserved 
+            Created for the Ohio State Coding Bootcamp &bull;
+            MIT License 
             </div>
     )
 }
