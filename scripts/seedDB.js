@@ -55,19 +55,19 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"]
+                ["Columbus", "Cincinnati", "Cleveland", "Chillicothe"],
+                ["Evansville", "Gary", "Indianapolis", "Fort Wayne"],
+                ["Adairville", "Frankfort", "Lexington", "Bowling Green"],
+                ["Virginia Beach", "Norfolk", "Roanoke", "Richmond"],
+                ["New York", "Albany", "Buffalo", "Niagra Falls"]
             ],
         correct_ans:
             [
-                "answer1",
-                "answer2",
-                "answer3",
-                "answer4",
-                "answer1"
+                "Columbus",
+                "Indianapolis",
+                "Frankfort",
+                "Richmond",
+                "Albany"
             ]
     },
     {
@@ -84,19 +84,19 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"]
+                ["George Washington", "John Adams", "Thomas Jefferson", "James Monroe"],
+                ["James Buchanan", "Abraham Lincoln", "Andrew Johnson", "James Garfield"],
+                ["Bill Clinton", "Jimmy Carter", "Ulysses S. Grant", "Ronald Reagan"],
+                ["William McKinley", "Woodrow Wilson", "Grover Cleveland", "Chester A. Arthur"],
+                ["Lyndon B. Johnson", "Dwight D. Eisenhower", "Herbert Hoover", "Harry S. Truman"]
             ],
         correct_ans:
             [
-                "answer1",
-                "answer2",
-                "answer3",
-                "answer4",
-                "answer2"
+                "George Washington",
+                "Abraham Lincoln",
+                "Ulysses S. Grant",
+                "Woodrow Wilson",
+                "Harry S. Truman"
             ]
     },
     {
@@ -113,19 +113,19 @@ const quizSeed = [
             ],
         answers:
             [
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"],
-                ["answer1", "answer2", "answer3", "answer4"]
+                ["Lithium", "Sodium", "Calcium", "Hydrogen"],
+                ["Helium", "Iron", "Cobalt", "Zinc"],
+                ["Uranium", "Chromium", "Manganese", "Platinum"],
+                ["Francium", "Mercury", "Radium", "Gold"],
+                ["Hydrogen", "Helium", "Carbon", "Nitrogen"]
             ],
         correct_ans:
             [
-                "answer1",
-                "answer2",
-                "answer3",
-                "answer4",
-                "answer3"
+                "Hydrogen",
+                "Helium",
+                "Uranium",
+                "Mercury",
+                "Hydrogen"
             ]
     },
 ];
