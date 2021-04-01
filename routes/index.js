@@ -9,7 +9,6 @@ router.use("/api", apiRoutes);
 // app.use( "/api", require("./routes/authentication") );
 
 // If no routes are used send the react application=
-
 router.use(function(req, res) {
      res.sendFile(path.join(__dirname, "../client/build/index.html"))
 })
