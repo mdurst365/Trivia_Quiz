@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function SelectQuiz() {
     return (
         <div className="WelcomeBox space">
-            <h1 class="smallHeader"><br />SELECT A QUIZ<br />&nbsp;</h1>
+            <h1 className="smallHeader"><br />SELECT A QUIZ<br />&nbsp;</h1>
             <h3>
                 <p className="space">
                     <Button type="submit" variant="outlined" color="primary">

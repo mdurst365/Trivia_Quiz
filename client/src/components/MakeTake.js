@@ -9,33 +9,33 @@ function MakeTake() {
         <div>
             <br /><br />
             <div className="WelcomeBox">
-            <h1 class="smallHeader"><br />MAKE OR TAKE A QUIZ<br />&nbsp;</h1>
-            <p className="space">
-                <Button type="submit" variant="outlined" color="primary">
-                    <Link to="/makequiz">
-                    Make Your Own Quiz
+                <h1 className="smallHeader"><br />MAKE OR TAKE A QUIZ<br />&nbsp;</h1>
+                <p className="space">
+                    <Button type="submit" variant="outlined" color="primary">
+                        <Link to="/makequiz">
+                            Make Your Own Quiz
                     </Link>
                     </Button>
-                    </p>
-            
-            <p className="space">
-                <Button type="submit" variant="outlined" color="primary">
-                    <Link to="/selectquiz">
-                    Take a Quiz
-                    </Link>
-                    </Button>
-                    </p>
+                </p>
 
-            <img className="imgRoundBorder" src={ questions } alt="Quiz Questions"></img>
-            <h6>Free Use Photo by Olya Kobruseva from Pexels</h6>            
-            
-            <p className="space">
-                <Button type="submit" variant="outlined" color="primary">
-                    <Link to="/scorescreen">
-                    View Scores
+                <p className="space">
+                    <Button type="submit" variant="outlined" color="primary">
+                        <Link to="/selectquiz">
+                            Take a Quiz
                     </Link>
                     </Button>
-                    </p>
+                </p>
+
+                <img className="imgRoundBorder" src={questions} alt="Quiz Questions"></img>
+                <h6>Free Use Photo by Olya Kobruseva from Pexels</h6>
+
+                <p className="space">
+                    <Button type="submit" variant="outlined" color="primary">
+                        <Link to="/scorescreen">
+                            View Scores
+                    </Link>
+                    </Button>
+                </p>
             </div>
         </div>
     );
