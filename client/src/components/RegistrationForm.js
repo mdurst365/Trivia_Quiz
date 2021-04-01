@@ -26,14 +26,7 @@ function Registration() {
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
 
-            <p class="space bold">NEW USERS</p>
-            <p className="space">
-                <Button type="submit" variant="outlined">
-                    <Link to="/CreateAccount">
-                        Create Account
-                    </Link>
-                </Button>
-            </p>
+            
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
@@ -55,6 +48,15 @@ function Registration() {
                 <Button type="submit" variant="outlined" >
                     <Link to="/MakeTake">
                         Sign In
+                    </Link>
+                </Button>
+            </p>
+
+            <p class="space bold">DON'T HAVE AN ACCOUNT?</p>
+            <p className="space">
+                <Button type="submit" variant="outlined">
+                    <Link to="/CreateAccount">
+                        Sign Up Now
                     </Link>
                 </Button>
             </p>
