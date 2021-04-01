@@ -8,6 +8,8 @@ const scoreSchema = new Schema({
     user_id: String,//{ type: Schema.Types.ObjectId, ref: User },
     quiz_id: String,//{ type: Schema.Types.ObjectId, ref: Quiz },
     attempts: Number,
+    title: String,
+    score: Number,
     highscore: Number
 });
 

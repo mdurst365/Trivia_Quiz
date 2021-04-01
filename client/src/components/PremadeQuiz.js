@@ -10,10 +10,11 @@ import { List, ListItem } from "./List";
 function PremadeQuiz() {
 
     const [quizes, setQuizes] = useState([]);
-    const [quiz, setQuiz] = useState([]);
     const [loading, setLoading] = useState(false);
     const [quizFinish, setQuizFinish] = useState(false);
     const [questionCount, setQuestionCount] = useState(0);
+    const [quiz, setQuiz] = useState([]);
+    const [score, setScore] = useState(0);
 
     // increment question number
     const handleQuestionCount = () => {
@@ -54,7 +55,7 @@ function PremadeQuiz() {
         event.preventDefault();
 
         var id = event.currentTarget.value;
-        console.log(event.currentTarget.value);
+        console.log(id);
 
         loadQuizById(id);
 
@@ -64,7 +65,14 @@ function PremadeQuiz() {
     const answerButton = (event) => {
         event.preventDefault();
 
+        var answer = event.currentTarget.value;
+        console.log(answer);
+
         handleQuestionCount();
+
+        if (answer === quiz.correct_ans[questionCount]) {
+            setScore(score + 10);
+        }
 
         if (questionCount === 4) {
             setQuizFinish(true);
@@ -81,7 +89,7 @@ function PremadeQuiz() {
 
         <div className="WelcomeBox space">
 
-            { quizes.length && !loading ? (
+            {quizes.length && !loading ? (
                 <List>
                     { quizes.map(quizData => (
                         <ListItem key={quizData._id}>
@@ -97,20 +105,21 @@ function PremadeQuiz() {
                 <div></div>
             )}
 
-            { loading ? (
+            {loading ? (
 
                 <div>
 
                     <h1 className="smallHeader"><br /> {quiz.title} <br />&nbsp;</h1>
+                    <h6 className="space"> Score: {score}/50</h6>
                     <h6 className="space smallright"> Question Number: {questionCount + 1}/5</h6>
                     <h2 className="space">Question: {quiz.questions[questionCount]} </h2>
-                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary">A: {quiz.answers[questionCount][0]} </Button>
+                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary" value={quiz.answers[questionCount][0]}>A: {quiz.answers[questionCount][0]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary">B: {quiz.answers[questionCount][1]} </Button>
+                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary" value={quiz.answers[questionCount][1]}>B: {quiz.answers[questionCount][1]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary">C: {quiz.answers[questionCount][2]} </Button>
+                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary" value={quiz.answers[questionCount][2]}>C: {quiz.answers[questionCount][2]} </Button>
                     <div className="space"></div>
-                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary">D: {quiz.answers[questionCount][3]} </Button>
+                    <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary" value={quiz.answers[questionCount][3]}>D: {quiz.answers[questionCount][3]} </Button>
                     <div className="space"></div>
 
                 </div>
