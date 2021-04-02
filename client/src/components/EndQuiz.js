@@ -10,7 +10,7 @@ function EndQuiz(props) {
     console.log(props.scorePass)
     return (
         <div className="WelcomeBox space">
-            <h1 className="smallHeaderBlue"><br />QUIZ NAME<br />&nbsp;</h1>
+            <h1 className="smallHeaderBlue"><br />{props.location.state.name}<br />&nbsp;</h1>
             <h1 className="space bold">Score: {props.location.state.scorePass}</h1>
 
             <Link to="/scorescreen">

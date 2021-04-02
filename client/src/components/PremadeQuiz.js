@@ -15,6 +15,7 @@ function PremadeQuiz() {
     const [questionCount, setQuestionCount] = useState(0);
     const [quiz, setQuiz] = useState([]);
     const [score, setScore] = useState(0);
+    const [title, setTitle] = useState();
 
     // increment question number
     const handleQuestionCount = () => {
@@ -43,9 +44,14 @@ function PremadeQuiz() {
         dbAPI.getQuiz(id)
             .then(results =>
                 setQuiz(results.data),
+                
                 setTimeout(() => setLoading(true), 1000),
                 console.log(quiz)
-            )
+            ).then(results =>
+                setTitle(results.title),
+                
+                setTimeout(() => setLoading(true), 1000),
+                console.log(title))
             .catch(err => console.log(err));
 
     };
@@ -84,7 +90,7 @@ function PremadeQuiz() {
     if (quizFinish) {
         console.log(score);
         return <Redirect to={{pathname:"/EndQuiz",
-                state: {scorePass: score}}} />
+                state: {scorePass: score, name: title}}} />
     }
 
     return (

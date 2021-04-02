@@ -111,7 +111,7 @@ var options = {
 if (quizFinish) {
     console.log(score);
     return <Redirect to={{pathname:"/EndQuiz",
-            state: {scorePass: score}}} />
+            state: {scorePass: score, name: "Random Quiz"}}} />
 }
 
     return (
