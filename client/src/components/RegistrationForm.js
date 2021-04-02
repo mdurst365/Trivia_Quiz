@@ -4,22 +4,35 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import dbAPI from "../utils/dbAPI";
 
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
+import { useLogin } from "../utils/auth"
 
 
 function Registration() {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        loadUsers()
-    }, [])
-    const loadUsers = () => {
-        dbAPI.getUsers()
-            .then(results =>
-                setUsers(results.data)
-            )
-            .catch(err => console.log(err));
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    // Get the helper login function from the `useLogin` hook.
+    const login = useLogin();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        try {
+
+            await login({ email, password });
+
+            // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+
+        } catch (err) {
+
+            // Handle error responses from the API
+            if (err.response && err.response.data) console.log(err.response.data);
+
+        }
     }
 
     return (
@@ -37,15 +50,15 @@ function Registration() {
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
-                   <span className="sans">Username: </span>  
-                   <input type="username" placeholder="Username"
+                <span className="sans">Username: </span>
+                <input type="username" placeholder="Username"
                     onChange={event => {
                         setUsername(event.target.value)
                     }} >
-                    </input>
+                </input>
 
                 <br /><br />
-                <span className="sans">Password: </span> 
+                <span className="sans">Password: </span>
                 <input type="password" placeholder="Password"
                     onChange={(event) => { setPassword(event.target.value) }}
 
