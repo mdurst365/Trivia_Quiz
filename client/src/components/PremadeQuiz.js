@@ -47,11 +47,7 @@ function PremadeQuiz() {
                 
                 setTimeout(() => setLoading(true), 1000),
                 console.log(quiz)
-            ).then(results =>
-                setTitle(results.title),
-                
-                setTimeout(() => setLoading(true), 1000),
-                console.log(title))
+            )
             .catch(err => console.log(err));
 
     };
@@ -90,7 +86,7 @@ function PremadeQuiz() {
     if (quizFinish) {
         console.log(score);
         return <Redirect to={{pathname:"/EndQuiz",
-                state: {scorePass: score, name: title}}} />
+                state: {scorePass: score, name: quiz.title}}} />
     }
 
     return (
