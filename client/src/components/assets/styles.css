@@ -88,6 +88,12 @@
     border-radius: 20px;
 }
 
+.heroImage {
+    width:100%;
+    margin-bottom:20px;
+    border: thin solid gray;
+}
+
 input[type=text] {
     width: 65%;
     height: 50px;
