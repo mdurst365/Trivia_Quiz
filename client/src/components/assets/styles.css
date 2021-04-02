@@ -128,4 +128,13 @@ h6 {
     width: 200px;
     background-color: red;
 }
+ .succeeded {
+    background-color: skyblue;
+    color:white;
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: 600;
+    margin-top: 15%;
+    text-align: center;
 
+ }
