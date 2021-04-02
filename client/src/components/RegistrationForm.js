@@ -64,7 +64,7 @@ function Registration() {
             <p className="space bold">LOGIN AS GUEST
                 <br /><br />
                 <Button type="submit" variant="outlined">
-                    <Link to="/randomquiz">
+                    <Link to="/takequiz">
                         Guest Login
                     </Link>
                 </Button></p>

@@ -18,7 +18,7 @@ function EndQuiz(props) {
             <h6>Photo by <a href="https://unsplash.com/@japhethmast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Japheth Mast</a> on <a href="/s/photos/victory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></h6>
             <div className="space"></div>
             <Button type="submit" variant="outlined">
-                <Link to="/maketake">
+                <Link to="/takequiz">
                     New Quiz
                     </Link>
             </Button>
