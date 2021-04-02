@@ -6,10 +6,9 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 // add before the catch all route
-// app.use( "/api", require("./routes/authentication") );
+router.use( "/authApi", require("./authentication") );
 
 // If no routes are used send the react application=
-
 router.use(function(req, res) {
      res.sendFile(path.join(__dirname, "../client/build/index.html"))
 })

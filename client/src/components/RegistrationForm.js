@@ -2,8 +2,6 @@ import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import dbAPI from "../utils/dbAPI";
-
 import React, { useRef } from "react";
 import { useLogin } from "../utils/auth"
 
@@ -47,22 +45,15 @@ function Registration() {
                     </Link>
                 </Button>
             </p>
-            <p class="space bold">REGISTERED USERS LOGIN</p>
-            <form>
-                <br /><br />
-                <span className="sans">Username: </span>
-                <input type="username" placeholder="Username"
-                    onChange={event => {
-                        setUsername(event.target.value)
-                    }} >
-                </input>
 
+            <p class="space bold">REGISTERED USERS LOGIN</p>
+            <form onSubmit={handleSubmit}>
+                <br /><br />
+                <span className="sans">Email: </span>
+                <input type="username" placeholder="Email" ref={emailRef}></input>
                 <br /><br />
                 <span className="sans">Password: </span>
-                <input type="password" placeholder="Password"
-                    onChange={(event) => { setPassword(event.target.value) }}
-
-                ></input>
+                <input type="password" placeholder="Password" ref={passwordRef}></input>
 
                 <div className="space">
                     <Button type="submit" variant="outlined" >
