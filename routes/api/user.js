@@ -11,4 +11,16 @@ router
   .route("/:id")
   .get(userController.getById)
 
+router
+  .route('/register')
+  .post(userController.create);
+
+router
+  .route('/login')
+  .post(userController.create);
+
+router
+  .route('/authenticated')
+  .post(userController.create);
+
 module.exports = router;

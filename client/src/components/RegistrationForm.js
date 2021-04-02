@@ -1,7 +1,7 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import React, { useRef } from "react";
 import { useLogin } from "../utils/auth"
 
@@ -24,6 +24,10 @@ function Registration() {
             await login({ email, password });
 
             // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+            console.log('login successful');
+
+            return <Redirect to="/MakeTake" />
+
 
         } catch (err) {
 
@@ -35,9 +39,9 @@ function Registration() {
 
     return (
         <div className="WelcomeBox space">
-            <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
+            <h1 className="smallHeader"><br />WELCOME<br />&nbsp;</h1>
 
-            <p class="space bold">NEW USERS</p>
+            <p className="space bold">NEW USERS</p>
             <p className="space">
                 <Button type="submit" variant="outlined">
                     <Link to="/CreateAccount">
@@ -47,7 +51,7 @@ function Registration() {
             </p>
 
             <p class="space bold">REGISTERED USERS LOGIN</p>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <br /><br />
                 <span className="sans">Email: </span>
                 <input type="username" placeholder="Email" ref={emailRef}></input>
@@ -56,10 +60,8 @@ function Registration() {
                 <input type="password" placeholder="Password" ref={passwordRef}></input>
 
                 <div className="space">
-                    <Button type="submit" variant="outlined" >
-                        <Link to="/MakeTake">
-                            Sign In
-                    </Link>
+                    <Button type="submit" variant="outlined" onClick={handleSubmit}>
+                        Sign In
                     </Button>
                 </div>
             </form>

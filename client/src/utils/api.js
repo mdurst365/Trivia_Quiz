@@ -35,7 +35,7 @@ class API {
      */
     register( userData ) {
 
-        return this.axios.post("/api/register", userData);
+        return this.axios.post("/api/user/register", userData);
 
     }
 
@@ -49,13 +49,13 @@ class API {
      */
     login( userData ) {
 
-        return this.axios.post("/api/login", userData);
+        return this.axios.post("/api/user/login", userData);
 
     }
 
     authenticated() {
 
-        return this.axios.post("/api/authenticated");
+        return this.axios.post("/api/user/authenticated");
 
     }
 

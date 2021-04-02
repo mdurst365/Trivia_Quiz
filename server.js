@@ -31,7 +31,7 @@ passport.use(require("./config/jwtPassportStrategy"));
 app.use(routes);
 
 // authentication
-app.use( "/api", require("./routes/authentication") );
+app.use( "/authApi", require("./routes/authentication") );
 
 // Mongo DB connection
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trivia_db");
