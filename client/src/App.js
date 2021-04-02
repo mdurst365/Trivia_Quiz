@@ -11,6 +11,9 @@ import EndQuiz from './components/EndQuiz';
 import ScoreScreen from './components/ScoreScreen';
 import CreateAccount from './components/CreateAccount';
 import PremadeQuiz from './components/PremadeQuiz';
+import Succeeded from './components/Succeeded';
+
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from './components/WelcomeBox';
 
@@ -19,13 +22,13 @@ import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
 
-    // Use the hook to reauthenticate stored tokens.
-    useAuthTokenStore();
+  // Use the hook to reauthenticate stored tokens.
+  useAuthTokenStore();
 
-    /** Rest of your App component code here */
+  /** Rest of your App component code here */
 
   return (
-    <Router basename={ process.env.PUBLIC_URL }>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <HeaderInfo />
         <FooterInfo />
@@ -41,6 +44,8 @@ function App() {
         <Route path="/scorescreen" component={ScoreScreen} />
         <Route path="/CreateAccount" component={CreateAccount} />
         <Route path="/PremadeQuiz" component={PremadeQuiz} />
+        <Route path="/Succeeded" component={Succeeded} />
+
         {/* welcome needs to remain on the bottom of this list */}
         <Route path="/" component={Welcome} />
       </Switch>

@@ -26,7 +26,7 @@ function Registration() {
         <div className="WelcomeBox space">
             <h1 class="smallHeader"><br />WELCOME<br />&nbsp;</h1>
 
-            
+
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
                 <br />
