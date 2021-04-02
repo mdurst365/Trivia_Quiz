@@ -1,8 +1,8 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
-import { Link, Redirect } from 'react-router-dom';
-import React, { useState, useEffect } from "react";
+import { Redirect } from 'react-router-dom';
+import React, { useState } from "react";
 import dbAPI from "../utils/dbAPI";
 
 
@@ -29,6 +29,12 @@ function MakeQuiz() {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormObj({ ...formObj, [name]: value })
+    };
+
+    const handleReset = () => {
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => (input.value = "")
+        );
     };
 
 
@@ -81,6 +87,9 @@ function MakeQuiz() {
         console.log(questions);
         console.log(answers);
         console.log(correctAnswers);
+
+        // reset form after submit
+        handleReset();
 
     };
 
