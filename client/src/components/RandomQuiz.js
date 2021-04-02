@@ -116,7 +116,7 @@ if (quizFinish) {
 
     return (
         <div className="WelcomeBox space">
-        <h1 className="smallHeader"><br /> {quiz.title} <br />&nbsp;</h1>
+        <h1 className="smallHeader"><br /> RANDOM QUIZ <br />&nbsp;</h1>
                     <h6 className="space"> Score: {score}/50</h6>
                     <h6 className="space smallright"> Question Number: {questionCount + 1}/5</h6>
                     <h2 className="space">Question: {questions[questionCount*5]} </h2>
