@@ -109,7 +109,10 @@ var options = {
 
 
 if (quizFinish) {
-    return <Redirect to="/EndQuiz" />
+    let finalScore = score;
+    console.log(score);
+    return <Redirect to={{pathname:"/EndQuiz",
+            state: {scorePass: score}}} />
 }
 
     return (
