@@ -12,7 +12,6 @@ function ScoreScreen (){
             <div className="flex-container bold">
                   <div>Name</div>
                     <div>Score</div>
-                    <div>Attempts</div>  
             </div>
             <div className="space"></div>
             <img className="imgRoundBorder" src={ confetti } alt="Confetti"></img>

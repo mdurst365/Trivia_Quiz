@@ -8,8 +8,8 @@ import Button from '@material-ui/core/Button';
 
 function Succeeded() {
     return (
-        <div className="succeeded">
-            <h1> You have Loged in successfully</h1>
+        <div className="WelcomeBox space">
+            <h1 className="smallHeaderBlue"><br />Account Created<br />&nbsp;</h1>
             <p className="space">
                 <Button type="submit" variant="outlined" >
                     <Link to="/register">

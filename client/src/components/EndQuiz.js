@@ -21,8 +21,6 @@ function EndQuiz(props) {
             <img className="imgRoundBorder" src={victory} alt="Victory"></img>
             <h6>Photo by <a href="https://unsplash.com/@japhethmast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Japheth Mast</a> on <a href="/s/photos/victory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></h6>
             <div className="space"></div>
-            <Button type="submit" variant="outlined">Retake Quiz</Button>
-                    &nbsp; &nbsp;
             <Button type="submit" variant="outlined">
                 <Link to="maketake">
                     New Quiz
