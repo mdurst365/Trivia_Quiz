@@ -49,7 +49,7 @@ function Registration() {
             </p>
             <p class="space bold">REGISTERED USERS LOGIN</p>
             <form>
-                <br />
+                <br /><br />
                 <span className="sans">Username: </span>
                 <input type="username" placeholder="Username"
                     onChange={event => {
@@ -63,14 +63,16 @@ function Registration() {
                     onChange={(event) => { setPassword(event.target.value) }}
 
                 ></input>
-            </form>
-            <p className="space">
-                <Button type="submit" variant="outlined" >
-                    <Link to="/MakeTake">
-                        Sign In
+
+                <div className="space">
+                    <Button type="submit" variant="outlined" >
+                        <Link to="/MakeTake">
+                            Sign In
                     </Link>
-                </Button>
-            </p>
+                    </Button>
+                </div>
+            </form>
+
 
             <p className="space bold">LOGIN AS GUEST
                 <br /><br />
