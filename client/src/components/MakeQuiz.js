@@ -23,6 +23,7 @@ function MakeQuiz() {
     // increment question number
     const handleCount = () => {
         setCount(count + 1);
+        //reset state here
     };
 
     // updates component state when the user types into the input field
@@ -101,22 +102,22 @@ function MakeQuiz() {
                     <div className="space">
                         Category: <input name="inputCategory" onChange={handleInputChange} type="text" placeholder="Category"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Question: <input name="inputQuestion" onChange={handleInputChange} type="text" placeholder="Input Question"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Answer A: <input name="inputAnswerA" onChange={handleInputChange} type="text" placeholder="Answer A"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Answer B: <input name="inputAnswerB" onChange={handleInputChange} type="text" placeholder="Answer B"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Answer C: <input name="inputAnswerC" onChange={handleInputChange} type="text" placeholder="Answer C"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Answer D: <input name="inputAnswerD" onChange={handleInputChange} type="text" placeholder="Answer D"></input>
                     </div>
-                    <div className="space">
+                    <div className="space clear">
                         Correct: <input name="inputCorrectAnswer" onChange={handleInputChange} type="text" placeholder="Correct Answer"></input>
                     </div>
                 </h3>
