@@ -1,29 +1,36 @@
 import "./assets/css_reset.css"
 import "./assets/styles.css"
 import React from "react"
-import confetti from "./assets/confetti.jpg"
+import victory from "./assets/victory.jpg"
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom';
 
-function ScoreScreen (){
+
+function EndQuiz(props) {
+    console.log(props.scorePass)
     return (
         <div className="WelcomeBox space">
-            <h1 className="smallHeaderBlue"><br />MY SCORES<br />&nbsp;</h1>
-            <div className="flex-container bold">
-                  <div>Name</div>
-                    <div>Score</div>
-            </div>
+            <h1 className="smallHeaderBlue"><br />{props.location.state.name}<br />&nbsp;</h1>
+            <h1 className="space bold">Score: {props.location.state.scorePass}</h1>
+
             <div className="space"></div>
-            <img className="imgRoundBorder" src={ confetti } alt="Confetti"></img>
-            <h6>Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="/s/photos/celebrate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  </h6>
+            <img className="imgRoundBorder" src={victory} alt="Victory"></img>
+            <h6>Photo by <a href="https://unsplash.com/@japhethmast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Japheth Mast</a> on <a href="/s/photos/victory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></h6>
             <div className="space"></div>
-            <Link to="/register">
-                <Button type="submit" variant="outlined">Play Again</Button>
-            </Link>
+            <Button type="submit" variant="outlined">
+                <Link to="/maketake">
+                    New Quiz
+                    </Link>
+            </Button>
+            &nbsp;&nbsp;
+            <Button type="submit" variant="outlined">
+                <Link to="/register">
+                    Return to Log In
+                    </Link>
+            </Button>
             <div className="space"></div>
         </div>
     )
 }
 
-export default ScoreScreen
+export default EndQuiz

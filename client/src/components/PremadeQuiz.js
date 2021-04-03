@@ -80,7 +80,7 @@ function PremadeQuiz() {
     // redirect to endquiz page once quiz is complete
     if (quizFinish) {
         console.log(score);
-        return <Redirect to={{pathname:"/EndQuiz",
+        return <Redirect to={{pathname:"/scorescreen",
                 state: {scorePass: score, name: quiz.title}}} />
     }
 
