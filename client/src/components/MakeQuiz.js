@@ -17,13 +17,10 @@ function MakeQuiz() {
     const [correctAnswers, setcorrectAnswers] = useState([]);
     const [finished, setFinished] = useState(false);
 
-    // const [showElement, setShowElement] = useState(false);
-
 
     // increment question number
     const handleCount = () => {
         setCount(count + 1);
-        //reset state here
     };
 
     // updates component state when the user types into the input field
@@ -42,10 +39,6 @@ function MakeQuiz() {
     const handleClick = (event) => {
 
         event.preventDefault();
-
-        // const handleShowElement = () => {
-        //     setShowElement(!showElement);
-        // };
 
         var {
             inputTitle, inputCategory,
@@ -104,13 +97,20 @@ function MakeQuiz() {
             <h6 className="space smallright">Questions Added: {count}/5</h6>
             <form>
                 <h3 className="formSmall">
-                    <br />
-                    <div className="space">
-                        Quiz Title: <input name="inputTitle" onChange={handleInputChange} type="text" placeholder="Title"></input>
-                    </div>
-                    <div className="space">
-                        Category: <input name="inputCategory" onChange={handleInputChange} type="text" placeholder="Category"></input>
-                    </div>
+
+                    { count < 1 ? (
+                        <div>
+                            <br />
+                            <div className="space">
+                                Quiz Title: <input name="inputTitle" onChange={handleInputChange} type="text" placeholder="Title"></input>
+                            </div>
+                            <div className="space">
+                                Category: <input name="inputCategory" onChange={handleInputChange} type="text" placeholder="Category"></input>
+                            </div>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
                     <div className="space clear">
                         Question: <input name="inputQuestion" onChange={handleInputChange} type="text" placeholder="Input Question"></input>
                     </div>
@@ -141,7 +141,7 @@ function MakeQuiz() {
                     </div> :
                     <div>
                         <Button onClick={handleClick} type="submit" variant="outlined">Next</Button> &nbsp;&nbsp;
-                </div>
+                    </div>
                 }
 
             </div>
