@@ -33,4 +33,4 @@ function EndQuiz(props) {
     )
 }
 
-export default EndQuiz
+export default ScoreScreen
