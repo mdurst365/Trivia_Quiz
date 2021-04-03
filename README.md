@@ -1,7 +1,7 @@
 # Trivia Quiz
 
   ## Description
-  A trivia quiz that allows users to either take a random quiz or make their own quiz questions
+  A trivia quiz that allows users to take a random quiz or make their own quiz questions
   
 
   ## Table of Contents
