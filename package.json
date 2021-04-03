@@ -1,6 +1,9 @@
 {
   "name": "trivia_quiz",
   "version": "1.0.0",
+  "engines": {
+    "node": "v14.15.1"
+  },
   "description": "trivia quiz app",
   "main": "server.js",
   "scripts": {
