@@ -12,6 +12,7 @@ import ScoreScreen from './components/ScoreScreen';
 import CreateAccount from './components/CreateAccount';
 import PremadeQuiz from './components/PremadeQuiz';
 import Succeeded from './components/Succeeded';
+import TakeQuiz from './components/TakeQuiz';
 
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/CreateAccount" component={CreateAccount} />
         <Route path="/PremadeQuiz" component={PremadeQuiz} />
         <Route path="/Succeeded" component={Succeeded} />
+        <Route path="/takequiz" component={TakeQuiz} />
 
         {/* welcome needs to remain on the bottom of this list */}
         <Route path="/" component={Welcome} />

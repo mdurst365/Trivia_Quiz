@@ -1,14 +1,38 @@
-# Trivia_Quiz
+# Trivia Quiz
 
-Project Requirements:
-- [ ] Must use ReactJS in some way (even if minimal)
-- [ ] Must use a Node and Express Web Server
-- [ ] Must be backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM
-- [ ] Must have both GET and POST routes for retrieving and adding new data
-- [ ] Must be deployed using Heroku (with Data)
-- [ ] Must utilize at least two libraries, packages, or technologies that we haven’t discussed
-- [ ] Must allow for or involve the authentication of users in some way
-- [ ] Must have a polished frontend/UI
-- [ ] Must have folder structure that meets MVC Paradigm
-- [ ] Must meet good quality coding standards (indentation, scoping, naming)
-- [ ] Must not expose sensitive API key information on the server
+  ## Description
+  A trivia quiz that allows users to either take a random quiz or make their own quiz questions
+  
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Credits](#credits)
+  * [Contributions](#contributions)
+  * [Questions](#questions)
+  * [License](#license)
+
+  ### Required prior to installation
+  * Node
+  * MongoDB
+   
+  ## Installation
+  1. Clone the repo from github 
+  2. Pull up the project in your file directory 
+  3. Type "npm i" into the terminal to install the required packages
+  4. Type "npm start" to run the program 
+  5. The program will open your default browser on localhost:3000
+
+  ## Credits      
+  * Molly Durst - durst.114@osu.edu 
+  * Simon Ziccardi - ziccardi.13@osu.edu 
+  * Jordan Stuckman - jordanks93@gmail.com 
+  * Mohamed Ahmed - mahmed@zenithacademy.org 
+
+  ## Contributions
+  Contact us by email or submit a pull request to join.
+
+  ## Questions
+  If you have any questions or feedback, contact us by email or reach out on github.
+  
+  ## License
+  MIT
