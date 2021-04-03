@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom';
 
 
-function EndQuiz(props) {
+function ScoreScreen(props) {
     console.log(props.scorePass)
     return (
         <div className="WelcomeBox space">
@@ -33,4 +33,4 @@ function EndQuiz(props) {
     )
 }
 
-export default ScoreScreen
+export default ScoreScreen;

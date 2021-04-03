@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 function EndQuiz(props) {
+    
     console.log(props.scorePass)
     return (
         <div className="WelcomeBox space">
@@ -33,4 +34,4 @@ function EndQuiz(props) {
     )
 }
 
-export default EndQuiz
+export default EndQuiz;
