@@ -29,13 +29,8 @@ function MakeTake() {
                 <img className="imgRoundBorder" src={questions} alt="Quiz Questions"></img>
                 <h6>Free Use Photo by Olya Kobruseva from Pexels</h6>
 
-                <p className="space">
-                    <Button type="submit" variant="outlined" color="primary">
-                        <Link to="/scorescreen">
-                            View Scores
-                    </Link>
-                    </Button>
-                </p>
+                <br></br>
+
             </div>
         </div>
     );
