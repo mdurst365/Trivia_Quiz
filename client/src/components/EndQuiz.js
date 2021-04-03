@@ -13,17 +13,19 @@ function EndQuiz(props) {
             <h1 className="smallHeaderBlue"><br />{props.location.state.name}<br />&nbsp;</h1>
             <h1 className="space bold">Score: {props.location.state.scorePass}</h1>
 
-            <Link to="/scorescreen">
-                <Button type="submit" variant="outlined">Save Name</Button>
-            </Link>
-
             <div className="space"></div>
             <img className="imgRoundBorder" src={victory} alt="Victory"></img>
             <h6>Photo by <a href="https://unsplash.com/@japhethmast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Japheth Mast</a> on <a href="/s/photos/victory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></h6>
             <div className="space"></div>
             <Button type="submit" variant="outlined">
-                <Link to="maketake">
+                <Link to="/takequiz">
                     New Quiz
+                    </Link>
+            </Button>
+            &nbsp;&nbsp;
+            <Button type="submit" variant="outlined">
+                <Link to="/register">
+                    Return to Log In
                     </Link>
             </Button>
             <div className="space"></div>

@@ -87,11 +87,11 @@ const answerButton = (event) => {
 
 }
 
-var options = {
-    amount: 5,
-    category: 'any',
-    type: 'multiple'
-}
+// var options = {
+//     amount: 5,
+//     category: 'any',
+//     type: 'multiple'
+// }
 
     function apiCall() { opentdb.getTrivia(options).then(result => {
         console.log(result);
@@ -129,13 +129,7 @@ if (quizFinish) {
                     <Button className="space answerBtn" onClick={answerButton} type="submit" variant="outlined" color="primary" value={questions[(questionCount*5)+4]}>D: {questions[(questionCount*5)+4]} </Button>
                     <div className="space"></div>
 
-            <p className="space">
-                <Button type="submit" variant="outlined" color="primary">
-                    <Link to="/endquiz">
-                        Next
-                    </Link>
-                </Button>
-            </p>
+    
         </div>
     );
 }
