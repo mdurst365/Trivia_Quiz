@@ -2,7 +2,7 @@ import "./assets/css_reset.css"
 import "./assets/styles.css";
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import dbAPI from "../utils/dbAPI";
 import { List, ListItem } from "./List";
 
@@ -15,7 +15,6 @@ function PremadeQuiz() {
     const [questionCount, setQuestionCount] = useState(0);
     const [quiz, setQuiz] = useState([]);
     const [score, setScore] = useState(0);
-    const [title, setTitle] = useState();
 
     // increment question number
     const handleQuestionCount = () => {
@@ -26,10 +25,6 @@ function PremadeQuiz() {
     useEffect(() => {
         loadQuizes()
     }, [])
-
-    // useEffect(() => {
-    //    setTimeout(() => setFinished(true), 3000)
-    // }, [quiz])
 
     const loadQuizes = () => {
         dbAPI.getQuizes()
