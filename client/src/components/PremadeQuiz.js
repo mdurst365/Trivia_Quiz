@@ -135,17 +135,6 @@ function PremadeQuiz() {
                 </div>
             )}
 
-            <div className="space">
-                {questionCount === 5 ?
-                    <div>
-                        <Button type="submit" onClick="" variant="outlined">Finish</Button>
-                    </div>
-                    :
-                    <div>
-                        <Button type="submit" variant="outlined">Next</Button> &nbsp;
-                </div>
-                }
-            </div>
         </div>
 
     );
