@@ -132,7 +132,7 @@ export const useAuthenticatedUser = () => {
 
 export const useLogin = () => {
 
-    const [ ,dispatch ] = useStoreContext();
+    const [ dispatch ] = useStoreContext();
 
     return async ( credentials ) => {
     
@@ -150,7 +150,7 @@ export const useLogin = () => {
 
 export const useLogout = () => {
 
-    const [ ,dispatch ] = useStoreContext();
+    const [ dispatch ] = useStoreContext();
     const history = useHistory();
 
     return () => {

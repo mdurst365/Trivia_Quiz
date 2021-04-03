@@ -2,25 +2,9 @@ import "./assets/css_reset.css"
 import "./assets/styles.css";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import dbAPI from "../utils/dbAPI";
-
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 
 function Registration() {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        loadUsers()
-    }, [])
-    const loadUsers = () => {
-        dbAPI.getUsers()
-            .then(results =>
-                setUsers(results.data)
-            )
-            .catch(err => console.log(err));
-    }
 
     return (
         <div className="WelcomeBox space">
@@ -31,18 +15,12 @@ function Registration() {
             <form>
                 <br />
                 <span className="sans">Username: </span>
-                <input type="username" placeholder="Username"
-                    onChange={event => {
-                        setUsername(event.target.value)
-                    }} >
+                <input type="username" placeholder="Username">
                 </input>
 
                 <br /><br />
                 <span className="sans">Password: </span>
-                <input type="password" placeholder="Password"
-                    onChange={(event) => { setPassword(event.target.value) }}
-
-                ></input>
+                <input type="password" placeholder="Password"></input>
             </form>
             <p className="space">
                 <Button type="submit" variant="outlined" >
